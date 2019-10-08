@@ -28,6 +28,7 @@
                     <p>{this.props.color}</p>
                     <p>{this.props.num}</p>
                     <p>{this.props.size}</p>
+                    <p>{this.props.new}</p>
                 </div>
             );
         }
@@ -48,7 +49,7 @@
     }
     ReactDOM.render(
         <div>
-            <Shirt color="jasnoniebieski" num="3.14" size="średni" />
+            <Shirt color="jasnoniebieski" num="3.14" size="średni" new="nowy"/>
         </div>,
         document.querySelector("#container")
     );
