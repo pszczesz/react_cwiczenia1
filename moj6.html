@@ -20,16 +20,31 @@
     <div id="container"></div>
 
     <script type="text/babel">    
+    
+
     class LightingCounter extends React.Component{
-        constructor(props){
+        constructor(props) {
             super(props);
+        
             this.state = {
-                strikes: 0
-            }
-        }
+              strikes: 0
+            };
+           // this.timerTick = this.timerTick.bind(this);
+          }
+          timerTick = ()=> {
+            this.setState((prevState) => {
+                return{
+                    strikes: prevState.strikes + 100
+                };
+              
+            });
+          }
+        componentDidMount() {
+            setInterval(this.timerTick, 1000);
+          } 
         render(){
             return (
-                <h1>Witaj</h1>
+                <h1>{this.state.strikes}</h1>
             );
         }
     }
