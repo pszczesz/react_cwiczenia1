@@ -86,16 +86,19 @@
             return (
                 <div style={divStyle}>
                     <LightingCounter />
+
                     <h2 style={textStyle.smallEmphasis}>Liczba uderzeń piorunów</h2>
                     <h2 style={textStyle.emphasis}>na całym świecie</h2>
-                    <p style={textStyle.small}>(od czasu otwarcia strony)</p>
+                    <p style={textStyle.small}>(od czasu otwarcia strony)</p>                  
                 </div>
             );
         }
     }
 
     ReactDOM.render(
-        <LightingCounterDisplay />,
+       
+        <LightingCounterDisplay />        
+        ,
         document.querySelector("#container")
     );
     </script>
