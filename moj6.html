@@ -3,7 +3,7 @@
 
 <head>
     <title>Obsługa stanu</title>
-    <meta charset="UTF-8">   
+    <meta charset="UTF-8">
     <style>
         #container {
             padding: 50px;
@@ -19,10 +19,10 @@
 <body>
     <div id="container"></div>
 
-    <script type="text/babel">    
-    
+    <script type="text/babel">
 
-    class LightingCounter extends React.Component{
+
+        class LightingCounter extends React.Component{
         constructor(props) {
             super(props);
         
@@ -43,26 +43,52 @@
             setInterval(this.timerTick, 1000);
           } 
         render(){
+            let counterStyle={
+                color: "#66FFFF",
+                fontSize: 50
+            };
+            let count = this.state.strikes.toLocaleString();
             return (
-                <h1>{this.state.strikes}</h1>
+                <h1 style={counterStyle}>{count}</h1>
             );
         }
     }
 
     class LightingCounterDisplay extends React.Component{
         render(){
+            let commonStyle = {
+                margin:0,
+                padding: 0
+            };
             let divStyle = {
                 width: 250,
                 textAlign: "center",
-                backgroundColor: "black",
+                backgroundColor: "#020202",
                 padding: 40,
                 fontFamily: "sans-serif",
-                color: "#999",
+                color: "#999999",
                 borderRadius: 10
             }
+            let textStyle = {
+                emphasis: {
+                    fontSize: 38,
+                    ...commonStyle
+                },
+                smallEmphasis: {
+                    ...commonStyle
+                },
+                small: {
+                    fontSize:17,
+                    opacity: 0.5,
+                    ...commonStyle
+                }
+            };
             return (
                 <div style={divStyle}>
                     <LightingCounter />
+                    <h2 style={textStyle.smallEmphasis}>Liczba uderzeń piorunów</h2>
+                    <h2 style={textStyle.emphasis}>na całym świecie</h2>
+                    <p style={textStyle.small}>(od czasu otwarcia strony)</p>
                 </div>
             );
         }
