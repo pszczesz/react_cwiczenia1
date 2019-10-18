@@ -2,5 +2,18 @@
     "githubPullRequests.remotes": [
         "https://github.com/pszczesz/react_cwiczenia1.git",
         "upstream"
-    ]
+    ],
+    "spellright.language": [
+        "pl"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.parserByClass": {
+        "django-html": {
+            "parser": "xml"
+        }
+    }
 }
