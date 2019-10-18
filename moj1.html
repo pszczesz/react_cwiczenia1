@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <script type="text/javascript" src="js/react.development.js"></script>
-        <script type="text/javascript" src="js/react-dom.development.js"></script>
-        <script type="text/javascript" src="js/babel.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/react.development.js"></script>
+    <script type="text/javascript" src="js/react-dom.development.js"></script>
+    <script type="text/javascript" src="js/babel.min.js"></script>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="text/babel">
 function formatName(user) {
     return user.firstName+ ' '+ user.lastName;
 }
-    const user1={firstName:"Jerzy",lastName:"Morecki"};
-    const user2={firstName:"Maniek",lastName:"Morecki"};
-    const user3={firstName:"Tomasz",lastName:"Morecki"};
-    const user4={firstName:"Anna",lastName:"Góra"};
-    const dane = [user1,user2,user3,user4];
+    
+    
     class Row extends React.Component{
         render(){
-            return <h1>Witaj, {this.props.imie}</h1>
+            return <h1>Witaj, {this.props.imie} {this.props.nazwisko}</h1>
         }
     }
     const elem = ()=>{
-        return (
-            <div>
-                Ala
-            </div>
-        );
+        let result = [];
+        const user1={firstName:"Jerzy",lastName:"Morecki"};
+        const user2={firstName:"Maniek",lastName:"Morecki"};
+        const user3={firstName:"Tomasz",lastName:"Morecki"};
+        const user4={firstName:"Anna",lastName:"Góra"};
+        let dane = [user1,user2,user3,user4];
+        for(let i=0;i<dane.length;i++){
+               result.push( <Row imie={dane[i].firstName} 
+                            nazwisko={dane[i].lastName} /> )
+            } 
+        console.log(result);
+       return result;
     };  
     
     ReactDOM.render(
-        return(<div>
-            for(let=0;i<dane.length;i++){
-                <Row imie={dane[i]}/>
-            }           
-        </div>),
+        <div>
+               {elem()}     
+        </div>,
         document.querySelector("#root")
     );
     </script>
-    </body>
+</body>
+
 </html>
