@@ -44,10 +44,10 @@
         return <Circle bgColor={colors[ran]} />
     }
     function getCircles() {
-        var colors = ["#393E41","#E94F37","#1C89BF","#A1D363","#85FFC7","#297373","#FF8552","#A40E4C"];
+        var colors = ["#393E41","#E94F37","#1C89BF","#A1D363","#85FFC7","#297373","#FF8552","#A40E4C","#4567AC"];
         let renderData = [];
         for(let i=0;i<colors.length;i++){
-            renderData.push(<Circle bgColor={colors[i]} />);
+            renderData.push(<Circle key={i+colors[i]} bgColor={colors[i]} />);
         }
         return renderData;
     }
