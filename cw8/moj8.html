@@ -25,6 +25,20 @@
 
 
     <script>
+
+        class Person{
+            constructor(imie,nazwisko,wiek){
+                this.imie=imie;
+                this.nazwisko=nazwisko;
+                this.wiek=wiek;
+            }
+            info = ()=>{
+                return "Hello: "+this.imie+" "+this.nazwisko+" "+this.wiek;
+            }
+        }
+        const p = new Person("Adam","Rad",67);
+        console.log(p.info());
+
         // window.addEventListener('mousedown', function (e) {
         //     document.body.classList.add('mouse-navigation');
         //     document.body.classList.remove('kbd-navigation');

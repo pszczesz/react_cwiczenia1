@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <script type="text/javascript" src="js/react.development.js"></script>
-        <script type="text/javascript" src="js/react-dom.development.js"></script>
-        <script type="text/javascript" src="js/babel.min.js"></script>
-    </head>
-    <body>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/react.development.js"></script>
+    <script type="text/javascript" src="js/react-dom.development.js"></script>
+    <script type="text/javascript" src="js/babel.min.js"></script>
+  </head>
+  <body>
     <div id="root"></div>
     <script type="text/babel">
-        class ShoppingList extends React.Component {
-            render(){
-                return (
-                    <div className='shopping-list'>
-                    <h1>{this.props.name} Lista zakupów </h1>
-                    <ul>
-                        <li>Bułki</li>
-                        <li>Chleb</li>
-                        <li>Mąka</li>
-                    </ul>
-                    </div>
-                );
-            }
+      class ShoppingList extends React.Component {
+        render() {
+          return (
+            <div className="shopping-list">
+              <h1>{this.props.name} Lista zakupów </h1>
+              <ul>
+                <li>Bułki</li>
+                <li>Chleb</li>
+                <li>Mąka</li>
+              </ul>
+            </div>
+          );
         }
-        ReactDOM.render(
-        <ShoppingList name='Tomasz'/>,
+      }
+      ReactDOM.render(
+        <ShoppingList name="Tomasz" />,
         document.querySelector("#root")
-        );
+      );
     </script>
-    </body>
+  </body>
 </html>
